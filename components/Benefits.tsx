@@ -6,7 +6,7 @@ export default function Benefits() {
     },
     {
       title: 'Chain Integrity',
-      description: 'Real-time risk detection that keeps your protocol clean.',
+      description: 'Real-time risk detection that keeps your protocol clean and safe.',
     },
     {
       title: 'Institutional Confidence',

@@ -21,13 +21,13 @@ export default function PillButton({
     text-center
     transition-all
     duration-300
-    px-6 py-3
-    sm:px-8 sm:py-3
-    md:px-10 md:py-4
-    lg:px-12 lg:py-4
-    text-sm
-    sm:text-base
-    md:text-lg
+    px-4 py-2
+    sm:px-5 sm:py-2
+    md:px-6 md:py-2.5
+    lg:px-7 lg:py-3
+    text-xs
+    sm:text-sm
+    md:text-sm
     disabled:opacity-50
     disabled:cursor-not-allowed
     ${shadow ? 'shadow-lg' : ''}
@@ -39,11 +39,17 @@ export default function PillButton({
       bg-accent
       text-white
       hover:bg-accent/80
-      ${shadow ? 'shadow-accent/20' : ''}
+      hover:brightness-110
+      hover:scale-105
+      active:scale-100
+      ${shadow ? 'shadow-accent/20 hover:shadow-accent/40' : ''}
     `,
     gradient: `
       text-white
-      ${shadow ? 'shadow-purple-500/20' : ''}
+      hover:brightness-110
+      hover:scale-105
+      active:scale-100
+      ${shadow ? 'shadow-purple-500/20 hover:shadow-purple-500/40' : ''}
     `,
     outline: `
       border-2
@@ -51,12 +57,16 @@ export default function PillButton({
       text-white
       bg-transparent
       hover:bg-white/10
-      ${shadow ? 'shadow-white/10' : ''}
+      hover:brightness-110
+      hover:scale-105
+      active:scale-100
+      ${shadow ? 'shadow-white/10 hover:shadow-white/30' : ''}
     `
   }
 
   const gradientStyle = variant === 'gradient' ? {
-    background: 'linear-gradient(to right, #C0B7E8 0%, #8176AF 50%, #C0B7E8 100%)'
+    background: 'linear-gradient(to right, #C0B7E8 0%, #8176AF 50%, #C0B7E8 100%)',
+    transition: 'all 0.3s ease'
   } : {}
 
   return (

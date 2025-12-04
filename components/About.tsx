@@ -11,7 +11,7 @@ export default function About() {
             <h2 className="text-5xl sm:text-6xl font-bold text-white">
               INTRODUCTION
               <br />
-              <span className="text-accent">To Fortgate</span>
+              <span className="text-accent">To Fortgate is...</span>
             </h2>
             <div className="relative w-full h-96 rounded-2xl overflow-hidden">
               <Image
