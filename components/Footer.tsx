@@ -47,8 +47,8 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#technologies" className="text-white/70 hover:text-accent transition-colors text-sm">
-                  TECHNOLOGIES
+                <a href="/blog" className="text-white/70 hover:text-accent transition-colors text-sm">
+                  BLOG
                 </a>
               </li>
               <li>

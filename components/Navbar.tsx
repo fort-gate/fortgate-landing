@@ -32,8 +32,8 @@ export default function Navbar() {
             <a href="#products" className="text-white hover:text-accent transition-colors font-medium">
               PRODUCTS
             </a>
-            <a href="#technologies" className="text-white hover:text-accent transition-colors font-medium">
-              TECHNOLOGIES
+            <a href="/blog" className="text-white hover:text-accent transition-colors font-medium">
+              BLOG
             </a>
             <a href="#how-to" className="text-white hover:text-accent transition-colors font-medium">
               HOW TO
@@ -74,8 +74,8 @@ export default function Navbar() {
             <a href="#products" className="block text-white hover:text-accent transition-colors font-medium">
               PRODUCTS
             </a>
-            <a href="#technologies" className="block text-white hover:text-accent transition-colors font-medium">
-              TECHNOLOGIES
+            <a href="/blog" className="block text-white hover:text-accent transition-colors font-medium">
+              BLOG
             </a>
             <a href="#how-to" className="block text-white hover:text-accent transition-colors font-medium">
               HOW TO
