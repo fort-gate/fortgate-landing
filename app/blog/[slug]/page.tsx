@@ -1,6 +1,8 @@
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
+import Image from 'next/image'
+import NewsletterForm from '@/components/NewsletterForm'
 
 // Datos del artículo - en producción esto vendría de una base de datos o CMS
 const articleData: { [key: string]: any } = {
@@ -8,6 +10,7 @@ const articleData: { [key: string]: any } = {
     title: 'Exchange Hacks Are Not Inevitable: Rethinking Security as Infrastructure',
     subtitle: 'Over the past decade, crypto exchanges have become critical gateways to the digital asset economy. They concentrate liquidity, onboard millions of users, and serve as bridges between traditional finance and decentralized systems.',
     category: 'COMPLIANCE STRATEGY',
+    image: '/images/blog2.jpg',
     author: {
       name: 'Sarah Joners',
       date: 'Oct 24, 2023',
@@ -112,7 +115,8 @@ const articleData: { [key: string]: any } = {
   'kyt-vs-kyc': {
     title: 'KYC vs KYT: Understanding the Difference in Crypto',
     subtitle: 'As crypto adoption accelerates, regulatory conversations often default to one familiar acronym: KYC. While Know Your Customer remains an important compliance requirement, it is no longer sufficient on its own.',
-    category: 'GUIDE',
+    category: 'INSIGHT',
+    image: '/images/blog0.jpg',
     author: {
       name: 'Jane Doe',
       date: 'Nov 22, 2023',
@@ -246,10 +250,208 @@ const articleData: { [key: string]: any } = {
   return calculateRiskScore(sourceRisk, destinationRisk, patternRisk);
 }`
   },
+  'navigating-crypto-regulation': {
+    title: 'Navigating the Shifting Sands of Crypto Regulation',
+    subtitle: 'Discover the latest AML directives and how Fortgate\'s infrastructure helps you stay compliant without compromising user experience.',
+    category: 'COMPLIANCE',
+    image: '/images/blog3.jpg',
+    author: {
+      name: 'Jane Doe',
+      date: 'Oct 24, 2023',
+      readTime: '6 min read',
+      avatar: '/images/placeholder-avatar.png'
+    },
+    content: [
+      {
+        type: 'paragraph',
+        text: 'The regulatory landscape for cryptocurrency is evolving at an unprecedented pace. What was once a largely unregulated space is now subject to increasing scrutiny from governments and financial authorities worldwide. For protocols and institutions operating in this space, staying compliant is no longer optional—it is essential for survival and growth.'
+      },
+      {
+        type: 'paragraph',
+        text: 'Understanding and adapting to these changes requires more than just awareness. It demands infrastructure that can evolve alongside regulations while maintaining the core benefits that make crypto valuable: speed, transparency, and accessibility.'
+      },
+      {
+        type: 'heading',
+        text: 'The Current Regulatory Landscape'
+      },
+      {
+        type: 'paragraph',
+        text: 'From the EU\'s Markets in Crypto-Assets (MiCA) regulation to the evolving guidance from the SEC and CFTC in the United States, regulatory frameworks are taking shape across major jurisdictions. These regulations aim to protect consumers, prevent financial crimes, and bring legitimacy to the crypto ecosystem.'
+      },
+      {
+        type: 'paragraph',
+        text: 'Key areas of focus include Anti-Money Laundering (AML) requirements, Know Your Customer (KYC) procedures, transaction monitoring, and reporting obligations. Protocols that fail to address these requirements risk exclusion from major markets and potential legal consequences.'
+      },
+      {
+        type: 'heading',
+        text: 'Challenges for DeFi Protocols'
+      },
+      {
+        type: 'paragraph',
+        text: 'Decentralized protocols face unique challenges in meeting regulatory requirements. The permissionless nature of DeFi, while a core strength, can conflict with traditional compliance approaches that rely on centralized control and identity verification.'
+      },
+      {
+        type: 'list',
+        items: [
+          'Balancing decentralization with compliance requirements',
+          'Implementing KYC/AML without compromising user privacy',
+          'Managing cross-border regulatory differences',
+          'Adapting to rapidly changing rules without constant protocol updates'
+        ]
+      },
+      {
+        type: 'heading',
+        text: 'How Fortgate Addresses These Challenges'
+      },
+      {
+        type: 'paragraph',
+        text: 'Fortgate\'s infrastructure is designed to bridge the gap between decentralization and compliance. By operating at the protocol level, Fortgate enables real-time transaction screening without requiring changes to user experience or protocol architecture.'
+      },
+      {
+        type: 'paragraph',
+        text: 'Our approach focuses on transaction behavior rather than identity alone. This allows protocols to meet AML requirements while preserving the privacy and accessibility that users expect from DeFi.'
+      },
+      {
+        type: 'heading',
+        text: 'Looking Ahead'
+      },
+      {
+        type: 'paragraph',
+        text: 'As regulations continue to evolve, the protocols that thrive will be those that treat compliance as a feature, not a burden. By building with compliance in mind from the start, projects can position themselves for long-term success and institutional adoption.'
+      },
+      {
+        type: 'paragraph',
+        text: 'The future of crypto regulation is not about choosing between innovation and compliance. It is about finding intelligent solutions that enable both.'
+      }
+    ],
+    keyTakeaways: [
+      'Crypto regulations are rapidly evolving across major jurisdictions including EU (MiCA) and US.',
+      'DeFi protocols face unique challenges in meeting compliance requirements while maintaining decentralization.',
+      'Transaction-based compliance (KYT) offers a privacy-preserving alternative to traditional KYC approaches.',
+      'Protocols that embrace compliance as a feature will be better positioned for institutional adoption.'
+    ],
+    codeSnippet: `async function checkCompliance(transaction) {
+  const riskScore = await analyzeTransaction(transaction);
+  const sanctionsCheck = await checkSanctionsList(transaction.addresses);
+  
+  return {
+    approved: riskScore < THRESHOLD && !sanctionsCheck.flagged,
+    riskLevel: riskScore,
+    details: sanctionsCheck
+  };
+}`
+  },
+  'real-time-threat-detection': {
+    title: 'The Rise of Real-Time Threat Detection in DeFi',
+    subtitle: 'Illicit fund flows are faster than ever. We break down how real-time analysis is the only way to protect your protocol and its users.',
+    category: 'SECURITY',
+    image: '/images/blog4.jpg',
+    author: {
+      name: 'John Smith',
+      date: 'Oct 18, 2023',
+      readTime: '8 min read',
+      avatar: '/images/placeholder-avatar.png'
+    },
+    content: [
+      {
+        type: 'paragraph',
+        text: 'The speed of blockchain transactions is both a feature and a vulnerability. In traditional finance, suspicious transactions can be flagged and reviewed over hours or days. In DeFi, funds can move through multiple protocols and across chains in seconds, making post-hoc detection nearly useless.'
+      },
+      {
+        type: 'paragraph',
+        text: 'This reality has given rise to a new paradigm in security: real-time threat detection. The question is no longer whether to monitor transactions, but how to do so at the speed of the blockchain itself.'
+      },
+      {
+        type: 'heading',
+        text: 'The Speed of Modern Threats'
+      },
+      {
+        type: 'paragraph',
+        text: 'Recent exploits have demonstrated just how quickly attackers can move. Flash loan attacks execute in a single block. Bridge exploits drain funds within minutes. Mixer services can obscure the trail of stolen assets almost instantaneously.'
+      },
+      {
+        type: 'paragraph',
+        text: 'Traditional security measures that rely on batch processing or manual review are simply too slow. By the time a threat is detected through conventional means, the damage is done and the funds are gone.'
+      },
+      {
+        type: 'heading',
+        text: 'Components of Real-Time Detection'
+      },
+      {
+        type: 'list',
+        items: [
+          'Mempool monitoring to catch threats before confirmation',
+          'Pattern recognition using machine learning models trained on historical exploits',
+          'Cross-chain tracking to follow funds across bridges',
+          'Behavioral analysis to identify anomalous transaction patterns',
+          'Integration with sanction lists and known malicious addresses'
+        ]
+      },
+      {
+        type: 'heading',
+        text: 'The Technical Challenge'
+      },
+      {
+        type: 'paragraph',
+        text: 'Building real-time detection systems presents significant technical challenges. The system must process thousands of transactions per second, make risk assessments in milliseconds, and do so with high accuracy to avoid false positives that would degrade user experience.'
+      },
+      {
+        type: 'paragraph',
+        text: 'Fortgate\'s approach combines on-chain analysis with off-chain intelligence, creating a comprehensive threat detection layer that operates at blockchain speed without introducing latency to legitimate transactions.'
+      },
+      {
+        type: 'heading',
+        text: 'Beyond Detection: Automated Response'
+      },
+      {
+        type: 'paragraph',
+        text: 'Detection alone is not enough. Modern security systems must also enable automated responses—pausing suspicious transactions, alerting protocol administrators, and in some cases, triggering protective mechanisms like emergency withdrawals or circuit breakers.'
+      },
+      {
+        type: 'paragraph',
+        text: 'The goal is to create a security layer that is proactive rather than reactive, preventing exploits rather than merely documenting them after the fact.'
+      },
+      {
+        type: 'heading',
+        text: 'The Future of DeFi Security'
+      },
+      {
+        type: 'paragraph',
+        text: 'As DeFi matures, real-time threat detection will become table stakes for any serious protocol. Users and institutions will increasingly choose platforms that can demonstrate robust security measures, and regulators will expect nothing less.'
+      },
+      {
+        type: 'paragraph',
+        text: 'The protocols that invest in real-time security infrastructure today will be the ones that survive and thrive in the more regulated, institutionally-focused DeFi landscape of tomorrow.'
+      }
+    ],
+    keyTakeaways: [
+      'Traditional batch-based security is too slow for blockchain\'s speed—threats execute in seconds.',
+      'Real-time detection requires mempool monitoring, ML pattern recognition, and cross-chain tracking.',
+      'Detection must be paired with automated response mechanisms for effective protection.',
+      'Real-time security infrastructure is becoming essential for protocol survival and institutional adoption.'
+    ],
+    codeSnippet: `async function detectThreat(tx) {
+  // Parallel analysis for speed
+  const [patternRisk, addressRisk, behaviorRisk] = await Promise.all([
+    analyzePattern(tx),
+    checkAddressReputation(tx.from, tx.to),
+    assessBehavior(tx)
+  ]);
+  
+  const threatLevel = calculateThreatScore(patternRisk, addressRisk, behaviorRisk);
+  
+  if (threatLevel > CRITICAL_THRESHOLD) {
+    await triggerAutomatedResponse(tx, threatLevel);
+  }
+  
+  return { threatLevel, shouldBlock: threatLevel > BLOCK_THRESHOLD };
+}`
+  },
   'zero-friction-mass-adoption': {
     title: 'Zero Friction: The Key to Mass Adoption in Crypto',
     subtitle: 'Crypto has proven it can move value globally, permissionlessly, and in real time. Yet despite more than a decade of innovation, mass adoption remains elusive. The barrier is no longer technological capability—it is friction.',
     category: 'TECHNOLOGY',
+    image: '/images/blog5.jpg',
     author: {
       name: 'Emily Chen',
       date: 'Oct 11, 2023',
@@ -383,33 +585,6 @@ const articleData: { [key: string]: any } = {
   }
 }
 
-const relatedPosts = [
-  {
-    slug: 'kyt-vs-kyc',
-    title: 'KYT vs KYC: Understanding the difference in Crypto',
-    category: 'GUIDE',
-    date: 'Nov 22, 2023',
-    readTime: '8 min read',
-    image: '/images/placeholder-blog-1.png'
-  },
-  {
-    slug: 'global-sanctions-q4',
-    title: 'Global Sanctions List: Q4 2023 Updates',
-    category: 'UPDATE',
-    date: 'Oct 15, 2023',
-    readTime: '7 min read',
-    image: '/images/placeholder-blog-2.png'
-  },
-  {
-    slug: 'preventing-bridge-hacks',
-    title: 'Preventing Bridge Hacks with Real-time Monitoring',
-    category: 'SECURITY',
-    date: 'Sep 29, 2023',
-    readTime: '6 min read',
-    image: '/images/placeholder-blog-3.png'
-  }
-]
-
 export default function BlogPostPage({ params }: { params: { slug: string } }) {
   const article = articleData[params.slug]
 
@@ -447,30 +622,24 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
           </h1>
 
           {/* Subtitle */}
-          <p className="text-xl text-white/80 mb-8 leading-relaxed">
+          <p className="text-xl text-white/80 mb-12 leading-relaxed">
             {article.subtitle}
           </p>
 
-          {/* Author Info */}
-          <div className="flex items-center space-x-4 mb-12 pb-8 border-b border-accent/20">
-            <div className="w-12 h-12 rounded-full bg-accent/20 border border-accent/30 flex items-center justify-center">
-              <span className="text-accent font-semibold text-sm">
-                {article.author.name.split(' ').map(n => n[0]).join('')}
-              </span>
-            </div>
-            <div>
-              <p className="text-white font-medium">{article.author.name}</p>
-              <p className="text-white/60 text-sm">
-                {article.author.date} · {article.author.readTime}
-              </p>
-            </div>
-          </div>
-
           {/* Featured Image */}
           <div className="relative w-full h-96 mb-12 rounded-2xl overflow-hidden bg-gradient-to-br from-accent/20 to-accent/5">
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-64 h-64 bg-accent/20 rounded-full border-4 border-accent/30"></div>
-            </div>
+            {article.image && !article.image.includes('placeholder') ? (
+              <Image
+                src={article.image}
+                alt={article.title}
+                fill
+                className="object-cover"
+              />
+            ) : (
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="w-64 h-64 bg-accent/20 rounded-full border-4 border-accent/30"></div>
+              </div>
+            )}
           </div>
 
           {/* Article Content */}
@@ -516,60 +685,10 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
             </ul>
           </div>
 
-          {/* Code Snippet */}
-          <div className="mt-12 p-6 bg-primary border border-accent/20 rounded-lg overflow-x-auto">
-            <pre className="text-white/90 text-sm font-mono">
-              <code>{article.codeSnippet}</code>
-            </pre>
-          </div>
-
           {/* Quote */}
-          <div className="mt-12 p-8 border-l-4 border-accent bg-accent/10 rounded-r-lg">
-            <p className="text-white text-xl italic leading-relaxed">
-              "The future of finance isn't about choosing between privacy and compliance. It's about using cryptography to achieve both simultaneously."
-            </p>
-          </div>
+        
         </div>
       </article>
-
-      {/* Read Next Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-primary/50">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex items-center justify-between mb-12">
-            <h2 className="text-[40px] font-montserrat font-bold text-white">Read Next</h2>
-            <Link href="/blog" className="text-accent hover:text-accent/80 transition-colors font-medium">
-              View all posts →
-            </Link>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {relatedPosts.map((post) => (
-              <Link
-                key={post.slug}
-                href={`/blog/${post.slug}`}
-                className="bg-primary/50 backdrop-blur-sm border border-accent/20 rounded-2xl overflow-hidden hover:border-accent/40 transition-all hover:shadow-lg hover:shadow-accent/10 group"
-              >
-                <div className="relative w-full h-48 bg-gradient-to-br from-accent/20 to-accent/5">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-24 h-24 bg-accent/20 rounded-lg border border-accent/30"></div>
-                  </div>
-                </div>
-                <div className="p-6">
-                  <span className="inline-block px-3 py-1 bg-accent/20 border border-accent/30 rounded-full text-accent text-xs font-medium mb-3">
-                    {post.category}
-                  </span>
-                  <h3 className="text-[40px] font-montserrat font-bold text-white mb-3 group-hover:text-accent transition-colors line-clamp-2">
-                    {post.title}
-                  </h3>
-                  <p className="text-white/50 text-xs">
-                    {post.date} · {post.readTime}
-                  </p>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Newsletter Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
@@ -586,19 +705,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
             </p>
           </div>
 
-          <form className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="flex-1 px-4 py-3 bg-primary/50 border-2 border-accent/30 rounded-lg text-white placeholder-white/50 focus:outline-none focus:border-accent transition-colors"
-            />
-            <button
-              type="submit"
-              className="px-8 py-3 bg-white text-primary rounded-lg font-semibold hover:bg-white/90 transition-colors"
-            >
-              Subscribe
-            </button>
-          </form>
+          <NewsletterForm />
         </div>
       </section>
 

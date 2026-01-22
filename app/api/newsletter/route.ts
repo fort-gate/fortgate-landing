@@ -3,24 +3,32 @@ import { NextRequest, NextResponse } from 'next/server'
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json()
-    const { firstName, lastName, email, phone, subject, message } = body
+    const { email } = body
 
-    // Validar campos requeridos
-    if (!firstName || !lastName || !email || !subject || !message) {
+    // Validar email
+    if (!email) {
       return NextResponse.json(
-        { error: 'Todos los campos son requeridos' },
+        { error: 'Email is required' },
+        { status: 400 }
+      )
+    }
+
+    // Validar formato de email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    if (!emailRegex.test(email)) {
+      return NextResponse.json(
+        { error: 'Invalid email format' },
         { status: 400 }
       )
     }
 
     // Configurar el email usando Resend
-    // Necesitas configurar RESEND_API_KEY en tus variables de entorno
     const RESEND_API_KEY = process.env.RESEND_API_KEY
 
     if (!RESEND_API_KEY) {
       console.error('RESEND_API_KEY no está configurada')
       return NextResponse.json(
-        { error: 'Error de configuración del servidor' },
+        { error: 'Server configuration error' },
         { status: 500 }
       )
     }
@@ -32,43 +40,38 @@ export async function POST(request: NextRequest) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        from: 'Fortgate Contact <onboarding@resend.dev>',
+        from: 'Fortgate Newsletter <onboarding@resend.dev>',
         to: ['hello@fortgate.xyz'],
-        subject: `[Fortgate Contact] ${subject}`,
+        subject: '[Fortgate] New Newsletter Subscription',
         html: `
-          <h2>Nuevo mensaje de contacto</h2>
-          <p><strong>Nombre:</strong> ${firstName} ${lastName}</p>
+          <h2>New Newsletter Subscription</h2>
+          <p>A new user has subscribed to the Fortgate newsletter:</p>
           <p><strong>Email:</strong> ${email}</p>
-          <p><strong>Teléfono:</strong> ${phone || 'No proporcionado'}</p>
-          <p><strong>Asunto:</strong> ${subject}</p>
           <hr />
-          <h3>Mensaje:</h3>
-          <p>${message.replace(/\n/g, '<br>')}</p>
+          <p style="color: #666; font-size: 12px;">This email was sent from the Fortgate blog newsletter form.</p>
         `,
-        reply_to: email,
       }),
     })
 
     if (!emailResponse.ok) {
       const errorData = await emailResponse.json()
-      console.error('Error enviando email:', errorData)
+      console.error('Error sending email:', errorData)
       return NextResponse.json(
-        { error: 'Error al enviar el mensaje' },
+        { error: 'Error processing subscription' },
         { status: 500 }
       )
     }
 
     return NextResponse.json(
-      { message: 'Mensaje enviado correctamente' },
+      { message: 'Successfully subscribed!' },
       { status: 200 }
     )
   } catch (error) {
-    console.error('Error en el servidor:', error)
+    console.error('Server error:', error)
     return NextResponse.json(
-      { error: 'Error interno del servidor' },
+      { error: 'Internal server error' },
       { status: 500 }
     )
   }
 }
-
 

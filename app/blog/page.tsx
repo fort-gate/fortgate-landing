@@ -1,6 +1,7 @@
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function BlogPage() {
   const blogPosts = [
@@ -15,7 +16,7 @@ export default function BlogPage() {
         readTime: '8 min read',
         avatar: '/images/placeholder-avatar.png'
       },
-      image: '/images/placeholder-blog-1.png'
+      image: '/images/blog0.jpg'
     },
     {
       slug: 'exchange-hacks-are-not-inevitable',
@@ -28,7 +29,7 @@ export default function BlogPage() {
         readTime: '5 min read',
         avatar: '/images/placeholder-avatar.png'
       },
-      image: '/images/placeholder-blog-1.png'
+      image: '/images/blog2.jpg'
     },
     {
       slug: 'navigating-crypto-regulation',
@@ -41,7 +42,7 @@ export default function BlogPage() {
         readTime: '6 min read',
         avatar: '/images/placeholder-avatar.png'
       },
-      image: '/images/placeholder-blog-1.png'
+      image: '/images/blog3.jpg'
     },
     {
       slug: 'real-time-threat-detection',
@@ -54,7 +55,7 @@ export default function BlogPage() {
         readTime: '8 min read',
         avatar: '/images/placeholder-avatar.png'
       },
-      image: '/images/placeholder-blog-2.png'
+      image: '/images/blog4.jpg'
     },
     {
       slug: 'zero-friction-mass-adoption',
@@ -67,7 +68,7 @@ export default function BlogPage() {
         readTime: '5 min read',
         avatar: '/images/placeholder-avatar.png'
       },
-      image: '/images/placeholder-blog-3.png'
+      image: '/images/blog5.jpg'
     }
   ]
 
@@ -98,9 +99,18 @@ export default function BlogPage() {
             >
                 {/* Post Image */}
                 <div className="relative w-full h-48 bg-gradient-to-br from-accent/20 to-accent/5 overflow-hidden">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-32 h-32 bg-accent/20 rounded-lg border border-accent/30"></div>
-                  </div>
+                  {post.image && !post.image.includes('placeholder') ? (
+                    <Image
+                      src={post.image}
+                      alt={post.title}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                  ) : (
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="w-32 h-32 bg-accent/20 rounded-lg border border-accent/30"></div>
+                    </div>
+                  )}
                 </div>
 
                 {/* Post Content */}
@@ -109,29 +119,14 @@ export default function BlogPage() {
                   <p className="text-white/60 text-sm font-medium mb-3">{post.category}</p>
                   
                   {/* Title */}
-                  <h3 className="text-[40px] font-montserrat font-bold text-white mb-3 line-clamp-2 group-hover:text-accent transition-colors">
+                  <h3 className="text-[20px] font-montserrat font-bold text-white mb-3 line-clamp-2 group-hover:text-accent transition-colors">
                     {post.title}
                   </h3>
                   
                   {/* Description */}
-                  <p className="text-white/70 text-sm leading-relaxed mb-6 line-clamp-3">
+                  <p className="text-white/70 text-sm leading-relaxed line-clamp-3">
                     {post.description}
                   </p>
-
-                  {/* Author Info */}
-                  <div className="flex items-center space-x-3">
-                    <div className="w-10 h-10 rounded-full bg-accent/20 border border-accent/30 flex items-center justify-center flex-shrink-0">
-                      <span className="text-accent font-semibold text-xs">
-                        {post.author.name.split(' ').map(n => n[0]).join('')}
-                      </span>
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <p className="text-white text-sm font-medium truncate">{post.author.name}</p>
-                      <p className="text-white/50 text-xs">
-                        {post.author.date} · {post.author.readTime}
-                      </p>
-                    </div>
-                  </div>
                 </div>
               </Link>
             ))}
