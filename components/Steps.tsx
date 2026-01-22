@@ -11,7 +11,7 @@ export default function Steps() {
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-2 gap-12 mb-16">
           <div className="flex items-center space-x-4">
-            <h2 className="text-5xl sm:text-6xl font-bold text-white">
+            <h2 className="text-[24px] font-montserrat font-bold text-white">
               HOW WE WORK
               <br />
               <span className="text-accent">WITH FORTGATE?</span>

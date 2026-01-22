@@ -19,11 +19,11 @@ export default function Features() {
   ]
 
   return (
-    <section id="products" className="py-20 px-4 sm:px-6 lg:px-8">
+    <section id="products" className="pt-20 pb-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-2 gap-8 mb-12">
           <div className="flex items-center space-x-4">
-            <h2 className="text-5xl sm:text-6xl font-bold text-white">
+            <h2 className="text-[40px] font-montserrat font-bold text-white">
               WHY CHOOSE FORTGATE?
             </h2>
             <svg className="hidden md:block w-8 h-8 text-white flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -49,7 +49,7 @@ export default function Features() {
               }}
             >
               {/* Title */}
-              <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
+              <h3 className="text-[24px] font-montserrat font-bold text-white mb-4">
                 {feature.title}
               </h3>
 

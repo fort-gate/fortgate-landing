@@ -418,7 +418,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
       <main className="min-h-screen bg-primary">
         <Navbar />
         <div className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl font-bold text-white mb-4">Article not found</h1>
+          <h1 className="text-[40px] font-montserrat font-bold text-white mb-4">Article not found</h1>
           <Link href="/blog" className="text-accent hover:underline">
             Back to Blog
           </Link>
@@ -442,7 +442,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
           </div>
 
           {/* Title */}
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+          <h1 className="text-[40px] font-montserrat font-bold text-white mb-6 leading-tight">
             {article.title}
           </h1>
 
@@ -478,7 +478,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
             {article.content.map((section: any, index: number) => {
               if (section.type === 'heading') {
                 return (
-                  <h2 key={index} className="text-3xl font-bold text-white mt-12 mb-6">
+                  <h2 key={index} className="text-[40px] font-montserrat font-bold text-white mt-12 mb-6">
                     {section.text}
                   </h2>
                 )
@@ -505,7 +505,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
 
           {/* Key Takeaways */}
           <div className="mt-16 p-8 bg-accent/10 border border-accent/20 rounded-2xl">
-            <h3 className="text-2xl font-bold text-white mb-6">KEY TAKEAWAYS</h3>
+            <h3 className="text-[40px] font-montserrat font-bold text-white mb-6">KEY TAKEAWAYS</h3>
             <ul className="space-y-4">
               {article.keyTakeaways.map((takeaway: string, index: number) => (
                 <li key={index} className="flex items-start space-x-3">
@@ -536,7 +536,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-primary/50">
         <div className="max-w-7xl mx-auto">
           <div className="flex items-center justify-between mb-12">
-            <h2 className="text-3xl font-bold text-white">Read Next</h2>
+            <h2 className="text-[40px] font-montserrat font-bold text-white">Read Next</h2>
             <Link href="/blog" className="text-accent hover:text-accent/80 transition-colors font-medium">
               View all posts →
             </Link>
@@ -558,7 +558,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                   <span className="inline-block px-3 py-1 bg-accent/20 border border-accent/30 rounded-full text-accent text-xs font-medium mb-3">
                     {post.category}
                   </span>
-                  <h3 className="text-white font-bold text-lg mb-3 group-hover:text-accent transition-colors line-clamp-2">
+                  <h3 className="text-[40px] font-montserrat font-bold text-white mb-3 group-hover:text-accent transition-colors line-clamp-2">
                     {post.title}
                   </h3>
                   <p className="text-white/50 text-xs">
@@ -580,7 +580,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
             </div>
-            <h2 className="text-3xl font-bold text-white mb-4">Stay ahead of compliance</h2>
+            <h2 className="text-[40px] font-montserrat font-bold text-white mb-4">Stay ahead of compliance</h2>
             <p className="text-white/70 text-lg mb-8">
               Get the latest regulatory updates and technical deep-dives delivered straight to your inbox.
             </p>

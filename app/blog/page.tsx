@@ -80,7 +80,7 @@ export default function BlogPage() {
           {/* Blog Header */}
           <div className="text-center mb-16">
             <p className="text-accent text-sm sm:text-base font-medium mb-4">OUR BLOG</p>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
+            <h1 className="text-[40px] font-montserrat font-bold text-white mb-6">
               Insights on Crypto Security
             </h1>
             <p className="text-white/70 text-base sm:text-lg max-w-3xl mx-auto leading-relaxed">
@@ -109,7 +109,7 @@ export default function BlogPage() {
                   <p className="text-white/60 text-sm font-medium mb-3">{post.category}</p>
                   
                   {/* Title */}
-                  <h3 className="text-white font-bold text-xl mb-3 line-clamp-2 group-hover:text-accent transition-colors">
+                  <h3 className="text-[40px] font-montserrat font-bold text-white mb-3 line-clamp-2 group-hover:text-accent transition-colors">
                     {post.title}
                   </h3>
                   

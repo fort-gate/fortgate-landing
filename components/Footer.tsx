@@ -1,23 +1,13 @@
-import PillButton from './PillButton'
 import Image from 'next/image'
 
 export default function Footer() {
-  const socialLinks = [
-    { name: 'Facebook', icon: 'F' },
-    { name: 'Twitter', icon: 'T' },
-    { name: 'LinkedIn', icon: 'L' },
-    { name: 'YouTube', icon: 'Y' },
-    { name: 'Instagram', icon: 'I' },
-    { name: 'Medium', icon: 'M' },
-    { name: 'Telegram', icon: 'TG' },
-  ]
 
   return (
     <footer className="py-16 px-4 sm:px-6 lg:px-8 border-t border-accent/20">
       <div className="max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-4 gap-12 mb-12">
+        <div className="flex flex-col md:flex-row gap-8 md:gap-0 mb-12">
           {/* Logo Column */}
-          <div className="space-y-4">
+          <div className="space-y-4 flex-1">
             <div className="relative h-16 w-48 sm:h-20 sm:w-56 md:h-24 md:w-64">
               <Image
                 src="/images/logolila.png"
@@ -32,9 +22,20 @@ export default function Footer() {
             </p>
           </div>
 
+          {/* Divider 1 - Hidden on mobile */}
+          <div className="hidden md:flex items-center px-6 lg:px-8">
+            <Image
+              src="/images/Vector 20.png"
+              alt=""
+              width={2}
+              height={120}
+              className="h-28 lg:h-32 w-auto"
+            />
+          </div>
+
           {/* Navigation Column 1 */}
-          <div>
-            <h4 className="text-white font-semibold mb-4">NAVIGATION</h4>
+          <div className="flex-1">
+            <h4 className="text-white font-semibold mb-4 text-[16px]">NAVIGATION</h4>
             <ul className="space-y-2">
               <li>
                 <a href="#about" className="text-white/70 hover:text-accent transition-colors text-sm">
@@ -51,63 +52,78 @@ export default function Footer() {
                   BLOG
                 </a>
               </li>
-              <li>
-                <a href="#how-to" className="text-white/70 hover:text-accent transition-colors text-sm">
-                  HOW TO
-                </a>
-              </li>
-              <li>
-                <a href="#join" className="text-white/70 hover:text-accent transition-colors text-sm">
-                  JOIN FORTGATE
-                </a>
-              </li>
+              
+              
             </ul>
           </div>
 
+          {/* Divider 2 - Hidden on mobile */}
+          <div className="hidden md:flex items-center px-6 lg:px-8">
+            <Image
+              src="/images/Vector 20.png"
+              alt=""
+              width={2}
+              height={120}
+              className="h-28 lg:h-32 w-auto"
+            />
+          </div>
+
           {/* Navigation Column 2 */}
-          <div>
-            <h4 className="text-white font-semibold mb-4">LEGAL</h4>
+          <div className="flex-1">
+            <h4 className="text-white font-semibold mb-4 text-[16px]">MORE INFORMATION</h4>
             <ul className="space-y-2">
               <li>
                 <a href="#" className="text-white/70 hover:text-accent transition-colors text-sm">
                   F.A.Q
                 </a>
               </li>
-              <li>
-                <a href="#" className="text-white/70 hover:text-accent transition-colors text-sm">
-                  SITEMAP
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-white/70 hover:text-accent transition-colors text-sm">
-                  CONDITIONS
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-white/70 hover:text-accent transition-colors text-sm">
-                  LICENSES
-                </a>
-              </li>
             </ul>
           </div>
 
+          {/* Divider 3 - Hidden on mobile */}
+          <div className="hidden md:flex items-center px-6 lg:px-8">
+            <Image
+              src="/images/Vector 20.png"
+              alt=""
+              width={2}
+              height={120}
+              className="h-28 lg:h-32 w-auto"
+            />
+          </div>
+
           {/* Social Media Column */}
-          <div>
-            <h4 className="text-white font-semibold mb-4">SOCIALIZE WITH FORTGATE</h4>
-            <div className="flex flex-wrap gap-3 mb-6">
-              {socialLinks.map((social, index) => (
-                <a
-                  key={index}
-                  href="#"
-                  className="w-10 h-10 bg-accent/20 border border-accent/30 rounded-full flex items-center justify-center text-accent hover:bg-accent hover:text-white transition-colors text-xs font-semibold"
-                >
-                  {social.icon}
-                </a>
-              ))}
+          <div className="flex-1">
+            <h4 className="text-white font-semibold mb-4 text-[16px]">SOCIALIZE WITH FORTGATE</h4>
+            <div className="flex gap-4 mb-6">
+              <a
+                href="https://www.linkedin.com/company/fortgate-aml"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:opacity-80 transition-opacity"
+              >
+                <Image
+                  src="/images/linkedin.png"
+                  alt="LinkedIn"
+                  width={40}
+                  height={40}
+                  className="w-10 h-10 sm:w-12 sm:h-12"
+                />
+              </a>
+              <a
+                href="https://twitter.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:opacity-80 transition-opacity"
+              >
+                <Image
+                  src="/images/twitter.png"
+                  alt="Twitter"
+                  width={40}
+                  height={40}
+                  className="w-10 h-10 sm:w-12 sm:h-12"
+                />
+              </a>
             </div>
-            <PillButton variant="gradient" className="text-sm">
-              LET&apos;S GET IN
-            </PillButton>
           </div>
         </div>
 

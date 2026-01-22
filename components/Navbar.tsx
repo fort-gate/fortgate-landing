@@ -26,6 +26,9 @@ export default function Navbar() {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
+            <a href="/" className="text-white hover:text-accent transition-colors font-medium">
+              HOME
+            </a>
             <a href="#about" className="text-white hover:text-accent transition-colors font-medium">
               ABOUT
             </a>
@@ -68,6 +71,9 @@ export default function Navbar() {
         {/* Mobile Menu */}
         {isMenuOpen && (
           <div className="md:hidden py-4 space-y-4">
+            <a href="/" className="block text-white hover:text-accent transition-colors font-medium">
+              HOME
+            </a>
             <a href="#about" className="block text-white hover:text-accent transition-colors font-medium">
               ABOUT
             </a>

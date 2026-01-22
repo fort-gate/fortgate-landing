@@ -28,7 +28,7 @@ export default function Benefits() {
               <div key={index} className="flex flex-col md:flex-row items-center w-full md:w-auto">
                 {/* Content */}
                 <div className="flex-1 text-center px-4 md:px-6 lg:px-8">
-                  <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-white mb-2 md:mb-3">
+                  <h3 className="text-[40px] font-montserrat font-bold text-white mb-2 md:mb-3">
                     {benefit.title}
                   </h3>
                   <p className="text-sm md:text-base lg:text-lg text-white/80 leading-relaxed">

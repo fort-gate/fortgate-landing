@@ -14,9 +14,9 @@ export default function FlowSteps() {
   return (
     <section id="how-to" className="py-20 px-4 sm:px-6 lg:px-8 bg-primary">
       <div className="max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-12 mb-16">
+        <div className="grid md:grid-cols-2 gap-4 mb-6">
           <div className="flex items-center space-x-4">
-            <h2 className="text-5xl sm:text-6xl font-bold text-white">
+            <h2 className="text-[24px] font-montserrat font-bold text-white">
               HOW WE WORK
               <br />
               <span className="text-accent">WITH FORTGATE?</span>
@@ -107,7 +107,7 @@ export default function FlowSteps() {
 
                   {/* Step Title */}
                   <div className="text-center mt-2">
-                    <p className="text-white font-semibold text-sm whitespace-nowrap">
+                    <p className="text-white font-semibold text-[24px] whitespace-nowrap">
                       {step.title}
                     </p>
                   </div>
@@ -147,7 +147,7 @@ export default function FlowSteps() {
 
                 {/* Title */}
                 <div className="flex-1">
-                  <p className="text-white font-semibold text-base">{step.title}</p>
+                  <p className="text-white font-semibold text-[24px]">{step.title}</p>
                 </div>
               </div>
             ))}

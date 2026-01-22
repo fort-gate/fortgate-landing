@@ -8,19 +8,14 @@ export default function Hero() {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Left Column */}
           <div className="space-y-8">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight">
-              Compliance is the missing piece for Crypto&apos;s Mass Adoption.
+            <h1 className="text-[40px] font-montserrat font-bold text-white leading-tight">
+              <span style={{ color: '#B9B0E2' }}>Compliance</span> is the missing piece for <span style={{ color: '#B9B0E2' }}>Crypto&apos;s</span> Mass <span style={{ color: '#B9B0E2' }}>Adoption</span>.
             </h1>
-            <p className="text-lg sm:text-xl text-white/90 leading-relaxed max-w-2xl">
+            <p className="text-lg sm:text-xl text-white/90 leading-relaxed max-w-2xl font-montserrat font-normal">
               Fortgate provides intelligent AML infrastructure that protects protocols and empowers institutions to operate safely on-chain.
             </p>
             <div className="flex items-center space-x-4">
-              <PillButton variant="gradient" className="flex items-center space-x-2">
-                <span>Contact Us!</span>
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </PillButton>
+              
             </div>
           </div>
 
